@@ -16,27 +16,22 @@ Scheme
 	Colors
 	{
 		// base colors
-		"White"				"255 255 255 255"
-		"OffWhite"			"221 221 221 255"
-		"DullWhite"			"190 190 190 255"
-		"Orange"			"255 155 0 255"
-		"TransparentBlack"	"0 0 0 128"
-		"Black"				"0 0 0 255"
+		"UNKNOWN"			"255 0 255 255" // Purple: If you find bright purple somewhere its one of these
+		"Blank"				"0 0 0 0" // Invisable
+		
+		"Disabled" "60 50 50 255" // Color for Disabled stuff
+		"Background" "35 35 35 255" // Background Color of all the menus
 
+		"Text" "238 232 232 255" // Text Color
 
-		"UNKNOWN"			"255 0 255 255"
+		"Primary" "212 164 164 255"	// Brightest Color
+		"Secondary" "126 46 46 255" // Base Color
+		"Accent" "206 72 72 255"	// Most Vibrant Color
 
+		"BackgroundLostFocus" "21 21 23 150" //Background Color for when frames lost focus
 
-		"Blank"				"0 0 0 0"
+	
 
-		"GMod_BG_Opaque"	"108 111 114 250"
-		"GMod_BG"			"108 111 114 0" // SRCDS cannot do transparency, so we gotta replace Blank with this.
-		"GMod_WhiteBlank"	"255 255 255 0"
-
-		"SteamLightGreen"			"157 194 80 255"
-		"AchievementsLightGrey"		"79 79 79 255"
-		"AchievementsDarkGrey"		"55 55 55 255"
-		"AchievementsInactiveFG"	"130 130 130 255"
 	}
 
 	///////////////////// BASE SETTINGS ////////////////////////
@@ -46,60 +41,61 @@ Scheme
 	BaseSettings
 	{
 		// The Default Border that surrounds most/all of the vgui elements
+		Border.Selection				"Accent"				// Border for Elements that should standout for selection - Option Menu "Accept Button"
+		Border.DarkSolid				"Accent"		// Border used to make elements stand out from Background
+		Border.Subtle					"Secondary"				// Border Used within panels to make subsections distinct
 		//Border.Bright					"UNKNOWN"
 		//Border.Dark						"UNKNOWN"
-		Border.Selection				"Black"				// Border for Elements that should standout for selection - Option Menu "Accept Button"
-		Border.DarkSolid				"40 40 40 255"		// Border used to make elements stand out from Background
-		Border.Subtle					"80 80 80 255"		// Subtle Border used on elements.
 
 		// Button - Single Click Action Buttons
-		Button.TextColor				"82 82 82 255"		// Default Text Color
-		Button.BgColor					"227 227 227 255"	// Default Background Color
-		Button.ArmedTextColor			"46 114 178 255"	// Hover Text Color
-		Button.ArmedBgColor				"240 240 240 255"   // Hover Background Color
-		Button.DepressedTextColor		"White"				// Clicked Text Color
-		Button.DepressedBgColor			"84 178 245 255"	// Clicked Background Color
+		Button.TextColor				"Text"		// Default Text Color
+		Button.BgColor					"Secondary"	// Default Background Color
+		Button.ArmedTextColor			"Text"	// Hover Text Color
+		Button.ArmedBgColor				"Primary"   // Hover Background Color
+		Button.DepressedTextColor		"Text"				// Clicked Text Color
+		Button.DepressedBgColor			"Accent"	// Clicked Background Color
 		//Button.FocusBorderColor			"UNKNOWN"
 
 		// CheckButtons
-		CheckButton.TextColor			"White"				// Text Label Color
-		CheckButton.SelectedTextColor	"White"				// Checked Text Label Color
-		CheckButton.BgColor				"White"				// Background of Checkbox Area
-		CheckButton.Border1				"Border.Subtle" 	// Border Color of Left and Top Walls 
-		CheckButton.Border2				"Border.Subtle"		// Border Color of Right and Bottom Walls
-		CheckButton.Check				"Black"				// color of the check itself
-		CheckButton.DisabledFgColor		"Black"				// color of the check itself when disabled
-		CheckButton.HighlightFgColor	"OffWhite"			// Hovered Text Color
-		CheckButton.ArmedBgColor		"Blank"				// Hovered Background Color
+		CheckButton.TextColor			"Text"				// Text Label Color
+		CheckButton.SelectedTextColor	"Text"				// Checked Text Label Color
+		CheckButton.BgColor				"Secondary"				// Background of Checkbox Area
+		CheckButton.Border1				"Accent" 	// Border Color of Left and Top Walls 
+		CheckButton.Border2				"Accent"		// Border Color of Right and Bottom Walls
+		CheckButton.Check				"Primary"				// color of the check itself
+		CheckButton.DisabledFgColor		"Secondary"				// color of the check itself when disabled
+		CheckButton.HighlightFgColor	"Text"			// Hovered Text Color
+		CheckButton.ArmedBgColor		"Primary"				// Hovered Background Color
 		//CheckButton.DepressedBgColor	"UNKNOWN"			
-		CheckButton.DisabledBgColor		"180 180 180 255"	// Disabled Background Color
+		CheckButton.DisabledBgColor		"Disabled"	// Disabled Background Color
 
 		// ComboBox Button !!ARROW!!
-		ComboBoxButton.ArrowColor		"81 81 81 255"		// Default Color of Triangle
-		ComboBoxButton.ArmedArrowColor	"110 110 110 255"	// Hovered Triangle Color
-		ComboBoxButton.BgColor			"GMod_WhiteBlank"	// Box Surrounding Triangle
-		ComboBoxButton.DisabledBgColor	"GMod_WhiteBlank"	// Disabled Background
+		ComboBoxButton.ArrowColor		"Secondary"		// Default Color of Triangle
+		ComboBoxButton.ArmedArrowColor	"Accent"	// Hovered Triangle Color
+		ComboBoxButton.BgColor			"Blank"		// Box Surrounding Triangle
+		ComboBoxButton.DisabledBgColor	"Disabled"	// Disabled Background
 
 		// Frames
 		Frame.TitleTextInsetX			16					// Title Text Inset
 		Frame.ClientInsetX				8					// Frame Padding for Child Elements Along X Axis
 		Frame.ClientInsetY				6					// Frame Padding for Child Elements Along Y Axis
-		Frame.BgColor					"GMod_BG_Opaque"	// Default Background Color
-		Frame.OutOfFocusBgColor			"97 100 102 240"	// Color When Not Focused
+		Frame.BgColor					"Background"	// Default Background Color
+		Frame.OutOfFocusBgColor			"BackgroundLostFocus"	// Color When Not Focused
 		Frame.FocusTransitionEffectTime	"0.3"				// Time it takes to transition between focus states
 		Frame.TransitionEffectTime		"0.3"				// Time it takes for panel to open (and close?)
 		Frame.AutoSnapRange				"0"					// Distance (In Pixels?) it takes to snap to another object
-		FrameGrip.Color1				"200 200 200 196"	// Bottom Right Grip Smaller Lines
-		FrameGrip.Color2				"0 0 0 196"			// Bottom Right Grid Larger Lines
-		FrameTitleButton.FgColor		"200 200 200 196"	// In Focus Color of X for close button
-		FrameTitleButton.BgColor		"GMod_BG"			// In Focus Color of Background Surrounding X
-		FrameTitleButton.DisabledFgColor	"255 255 255 192" 	// Out of Focus Color of X
-		FrameTitleButton.DisabledBgColor	"GMod_BG"			// Out of Focus Color of Background Surrounding X
-		FrameTitleBar.Font				"UiBold"			// Font Used for Name of Frame
-		FrameTitleBar.TextColor			"255 255 255 204"	// Default / Focused Text Color
-		FrameTitleBar.BgColor			"GMod_BG"			// Default / Focused Background Color
-		FrameTitleBar.DisabledTextColor	"255 255 255 91"	// Out of Focus Text Color
-		FrameTitleBar.DisabledBgColor	"GMod_BG"			// Out of Focus Background Color
+		FrameGrip.Color1				"Secondary"	// Bottom Right Grip Smaller Lines
+		FrameGrip.Color2				"Primary"			// Bottom Right Grid Larger Lines
+		FrameTitleButton.FgColor		"Primary"	// In Focus Color of X for close button
+		FrameTitleButton.BgColor		"Secondary"			// In Focus Color of Background Surrounding X
+		FrameTitleButton.DisabledFgColor	"Primary" 	// Out of Focus Color of X
+		FrameTitleButton.DisabledBgColor	"Blank"			// Out of Focus Color of Background Surrounding X
+		
+		FrameTitleBar.Font				"JetBrainsMono"			// Font Used for Name of Frame
+		FrameTitleBar.TextColor			"Text"	// Default / Focused Text Color
+		FrameTitleBar.BgColor			"Blank"			// Default / Focused Background Color
+		FrameTitleBar.DisabledTextColor	"Text"	// Out of Focus Text Color
+		FrameTitleBar.DisabledBgColor	"Blank"			// Out of Focus Background Color
 		
 		// UnUsed in Gmod - Frame Button for Min, Max, Close Actions
 		// This also isnt positioned properly so it just needs to stay invis
@@ -109,150 +105,146 @@ Scheme
 		FrameSystemButton.DisabledIcon	""
 
 		// UNKNOWN
-		//GraphPanel.FgColor				"White"
-		//GraphPanel.BgColor				"TransparentBlack"
+		GraphPanel.FgColor				"UNKNOWN"
+		GraphPanel.BgColor				"UNKNOWN"
 
 		// Labels
-		Label.TextDullColor			"DullWhite"			// Color of non Interactive Label
-		Label.TextColor				"OffWhite"			// Default Label Color
-		Label.TextBrightColor		"UNKNOWN"
-		Label.SelectedTextColor		"White"				// Color When Text Is Selected
-		Label.BgColor				"GMod_BG"			// Default Label Background Color
-		Label.DisabledFgColor1		"110 110 110 255"	// DropShadow Color of Disabled Labels
-		Label.DisabledFgColor2		"50 50 50 255"		// Main Color of Disabled Labels
+		Label.TextDullColor			"Text"			// Color of non Interactive Label
+		Label.TextColor				"Text"			// Default Label Color
+		Label.TextBrightColor		"Text"
+		Label.SelectedTextColor		"Primary"				// Color When Text Is Selected
+		Label.BgColor				"Blank"			// Default Label Background Color
+		Label.DisabledFgColor1		"Disabled"	// DropShadow Color of Disabled Labels
+		Label.DisabledFgColor2		"Disabled"		// Main Color of Disabled Labels
 
 		// UNKNOWN
-		//ListPanel.TextColor					"Black"
-		//ListPanel.TextBgColor				"Blank"
-		//ListPanel.BgColor					"White"
-		//ListPanel.SelectedTextColor			"White"
-		//ListPanel.SelectedBgColor			"0 168 255 204"
-		//ListPanel.OutOfFocusSelectedTextColor	"Black"
-		//ListPanel.SelectedOutOfFocusBgColor		"132 183 241 100"
-		//ListPanel.EmptyListInfoTextColor	"Black"
+		ListPanel.TextColor					"UNKNOWN"
+		ListPanel.TextBgColor				"UNKNOWN"
+		ListPanel.BgColor					"UNKNOWN"
+		ListPanel.SelectedTextColor			"UNKNOWN"
+		ListPanel.SelectedBgColor			"UNKNOWN"
+		ListPanel.OutOfFocusSelectedTextColor	"UNKNOWN"
+		ListPanel.SelectedOutOfFocusBgColor		"UNKNOWN"
+		ListPanel.EmptyListInfoTextColor	"UNKNOWN"
 
 		// Menu - Console Autocompletion 
-		Menu.TextColor					"80 80 80 255"
-		Menu.BgColor					"233 233 233 255"
-		Menu.ArmedTextColor				"White"
-		Menu.ArmedBgColor				"132 183 241 255"
+		Menu.TextColor					"Text"
+		Menu.BgColor					"Background"
+		Menu.ArmedTextColor				"Accent"
+		Menu.ArmedBgColor				"Primary"
 		Menu.TextInset					"6"
 
-		//Panel.FgColor					"UNKNOWN"
-		Panel.BgColor					"108 111 114 0"  // Fun Fact Chaning this Fills the entire screen with this color, dont know why this value works but it does.
+		Panel.FgColor					"UNKNOWN"
+		Panel.BgColor					"Blank"  // Fun Fact Changing this Fills the entire screen with this color
 
 		// Progress Bar Used When Joining a Server
-		ProgressBar.FgColor				"White"				// The White Boxes that Fill Up
-		ProgressBar.BgColor				"TransparentBlack"	// The Background
+		ProgressBar.FgColor				"Primary"				// The White Boxes that Fill Up
+		ProgressBar.BgColor				"Secondary"	// The Background
 
 		// PropertySheet - Main Parts of the Options Menu
-		PropertySheet.TextColor				"10 10 10 200"	// Default Text
-		PropertySheet.SelectedTextColor		"10 10 10 255"		// Text Color for Currently Slected Tab
-		PropertySheet.SelectedBgColor		"UNKNOWN"	
+		PropertySheet.TextColor				"Text"			// Default Text
+		PropertySheet.SelectedTextColor		"Accent"		// Text Color for Currently Slected Tab
 		PropertySheet.TransitionEffectTime	"0.25"			// time to change from one tab to another
+		PropertySheet.SelectedBgColor		"UNKNOWN"	
 		PropertySheet.BgColor				"UNKNOWN"
 
 		// UNKNOWN
-		//RadioButton.TextColor			"OffWhite"
-		//RadioButton.SelectedTextColor	"White"
-
-		
-		//RichText.TextColor				"OffWhite"
-		//RichText.BgColor				"TransparentBlack"
-		//RichText.SelectedTextColor		"White"
-		//RichText.SelectedBgColor		"0 168 255 204"
+		RadioButton.TextColor			"UNKNOWN"
+		RadioButton.SelectedTextColor	"UNKNOWN"
 
 		// Console Text
-		RichText.TextColor				"OffWhite"	
-		RichText.BgColor				"TransparentBlack"	// Background for the Text Area
-		RichText.SelectedTextColor		"White"				// Text Color when highlighted
-		RichText.SelectedBgColor		"0 168 255 204"		// Background Color for selected text characters
+		RichText.TextColor				"Text"	
+		RichText.BgColor				"Blank"	// Background for the Text Area
+		RichText.SelectedTextColor		"Accent"				// Text Color when highlighted
+		RichText.SelectedBgColor		"Primary"		// Background Color for selected text characters
 
 		// Scrollbar
-		ScrollBar.Wide						15
+		ScrollBar.Wide						16
 
 		// Scrollbar Up and Down Buttons (Console)
-		ScrollBarButton.FgColor				"60 60 60 255"		// Color of Arrows
-		ScrollBarButton.BgColor				"207 207 207 255"	// Background of Buttons
-		ScrollBarButton.ArmedFgColor		"20 65 72 255"		// Hover Text Color
-		ScrollBarButton.ArmedBgColor		"210 237 255 255"	// Hover Background Color
-		ScrollBarButton.DepressedFgColor	"9 119 226 255"		// Clicked Text Color
-		ScrollBarButton.DepressedBgColor	"31 207 248 255"	// Clicked Background
+		ScrollBarButton.FgColor				"Text"		// Color of Arrows
+		ScrollBarButton.BgColor				"Secondary"	// Background of Buttons
+		ScrollBarButton.ArmedFgColor		"Accent"		// Hover Text Color
+		ScrollBarButton.ArmedBgColor		"Primary"	// Hover Background Color
+		ScrollBarButton.DepressedFgColor	"Text"		// Clicked Text Color
+		ScrollBarButton.DepressedBgColor	"Accent"	// Clicked Background
 
 		// Scrollbar Track and Grip
-		ScrollBarSlider.FgColor				"220 220 220 255"	// Slider Grip Color
-		ScrollBarSlider.BgColor				"184 184 184 229"	// Sliders Track Color
+		ScrollBarSlider.FgColor				"Secondary"	// Slider Grip Color
+		ScrollBarSlider.BgColor				"Primary"	// Sliders Track Color
 
 		// Options --> KeyBoard	
-		SectionedListPanel.HeaderTextColor				"50 50 50 255"		// Header Text Color
+		SectionedListPanel.HeaderTextColor				"Secondary"		// Header Text Color
 		SectionedListPanel.HeaderBgColor				"Blank"				// Header Background Color
-		SectionedListPanel.DividerColor					"0 0 0 150"			// Divider Color
-		//SectionedListPanel.TextColor					"10 10 10 255"
-		SectionedListPanel.BrightTextColor				"40 40 40 255"		// Text Color of Each Item in List
-		SectionedListPanel.BgColor						"White"				// Background of Entire Element
-		SectionedListPanel.SelectedTextColor			"White"				// Color of Selected Text	
-		SectionedListPanel.SelectedBgColor				"0 168 255 204"		// Color of Selected Text Background 
-		SectionedListPanel.OutOfFocusSelectedTextColor	"Black"				// Selected Text Color When Out of Focus
-		SectionedListPanel.OutOfFocusSelectedBgColor	"132 183 241 100"	// Background of Selected Text When out of Focus
+		SectionedListPanel.DividerColor					"Accent"			// Divider Color
+		SectionedListPanel.TextColor					"UNKNOWN"
+		SectionedListPanel.BrightTextColor				"Text"		// Text Color of Each Item in List
+		SectionedListPanel.BgColor						"Background"				// Background of Entire Element
+		SectionedListPanel.SelectedTextColor			"Text"				// Color of Selected Text	
+		SectionedListPanel.SelectedBgColor				"Accent"		// Color of Selected Text Background 
+		SectionedListPanel.OutOfFocusSelectedTextColor	"Text"				// Selected Text Color When Out of Focus
+		SectionedListPanel.OutOfFocusSelectedBgColor	"Blank" //Broken
 
 		// Slider
-		Slider.NobColor				"220 220 220 255"	// Color of The Thing you Grab
-		Slider.TextColor			"180 180 180 255"	// Text and Markers Below Element
-		Slider.TrackColor			"184 184 184 229"	// Track Color
-		Slider.DisabledTextColor1	"110 110 110 255"	// Accent Color of Disabled Markers
-		Slider.DisabledTextColor2	"50 50 50 255"		// Main Color of Disabled Markers
+		Slider.NobColor				"Secondary"	// Color of The Thing you Grab
+		Slider.TextColor			"Text"	// Text and Markers Below Element
+		Slider.TrackColor			"Primary"	// Track Color
+		Slider.DisabledTextColor1	"Disabled"	// Accent Color of Disabled Markers
+		Slider.DisabledTextColor2	"Disabled"		// Main Color of Disabled Markers
 
 		// Text Entry 
-		TextEntry.TextColor			"10 10 10 255"		// Default Text Color
-		TextEntry.BgColor			"White"				// Default Background Color
-		TextEntry.CursorColor		"10 10 10 255"		// Blinking Cursor Color
-		TextEntry.DisabledTextColor	"128 128 128 255"	// Disabled Text Color
-		TextEntry.DisabledBgColor	"192 192 192 255"	// Disabled Background Color
-		TextEntry.SelectedTextColor	"10 10 10 255"		// Selected Text Color
-		TextEntry.SelectedBgColor	"0 168 255 204"		// Selected Background Color
-		TextEntry.OutOfFocusSelectedBgColor	"132 183 241 100"	// Out of Focus Background Color
+		TextEntry.TextColor			"Text"		// Default Text Color
+		TextEntry.BgColor			"Blank"				// Default Background Color
+		TextEntry.CursorColor		"Accent"		// Blinking Cursor Color
+		TextEntry.DisabledTextColor	"Disabled"	// Disabled Text Color
+		TextEntry.DisabledBgColor	"Blank"	// Disabled Background Color
+		TextEntry.SelectedTextColor	"Text"		// Selected Text Color
+		TextEntry.SelectedBgColor	"Primary"		// Selected Background Color
+		TextEntry.OutOfFocusSelectedBgColor	"BackgroundLostFocus"	// Out of Focus Background Color
 		TextEntry.FocusEdgeColor	"UNKNOWN"	
 
 		// UNKNOWN
-		//ToggleButton.SelectedTextColor	"White"
+		ToggleButton.SelectedTextColor	"UNKNOWN"
 
 		// ToolTip
-		Tooltip.TextColor			"110 102 60 255"	// Color of Text in Popup Tooltip
-		Tooltip.BgColor				"249 238 181 255"	// Color of Background in Popup Tooltip 
+		Tooltip.TextColor			"Text"	// Color of Text in Popup Tooltip
+		Tooltip.BgColor				"Accent"	// Color of Background in Popup Tooltip 
+
+		// vgui_drawtree 1
+		TreeView.BgColor			"Blank"
 
 		// UNKNOWN
-		//TreeView.BgColor			"TransparentBlack"
+		//WizardSubPanel.BgColor		"UNKNOWN"
 
-		// UNKNOWN
-		//WizardSubPanel.BgColor		"Blank"
+		// Ingame Main Menu -- If uncommented ingame menu will have black background
+		//MainMenu.TextColor			"UNKNOWN"	
+		//MainMenu.ArmedTextColor		"UNKNOWN"	
+		//MainMenu.DepressedTextColor	"UNKNOWN"
+		//MainMenu.MenuItemHeight		"50"				
+		//MainMenu.Inset				"50"
+		//MainMenu.Backdrop			"UNKNOWN"
 
-		// scheme-specific colors 
-		// UNKNOWN
-		//MainMenu.TextColor			"White"	
-		//MainMenu.ArmedTextColor		"200 200 200 255"	
-		//MainMenu.DepressedTextColor	"192 186 80 255"
-		//MainMenu.MenuItemHeight		"30"				
-		//MainMenu.Inset				"32"
-		//MainMenu.Backdrop			"0 0 0 156"
+		// UNKNOWN???
+		Console.TextColor			"Accent"	//User inputed
+		Console.DevTextColor		"UNKNOWN"
 
-		// UNKNOWN
-		//Console.TextColor			"OffWhite"
-		//Console.DevTextColor		"White"
+		//UNKNOWN
+		//Pretty sure these are just no long apart of the menu
+		NewGame.TextColor			"UNKNOWN"
+		NewGame.FillColor			"UNKNOWN"
+		NewGame.SelectionColor		"UNKNOWN"	
+		NewGame.DisabledColor		"UNKNOWN"
 
-		// UNKNOWN
-		//NewGame.TextColor			"White"
-		//NewGame.FillColor			"Black"
-		//NewGame.SelectionColor		"Orange"	
-		//NewGame.DisabledColor		"128 128 128 196"
-
-		// UNKNOWN
-		//"QuickListBGDeselected"		"AchievementsDarkGrey"
-		//"QuickListBGSelected"		"AchievementsLightGrey"
+		//UNKNOWN
+		//Pretty sure these dont exist either
+		"QuickListBGDeselected"		"UNKNOWN"
+		"QuickListBGSelected"		"UNKNOWN"
 	}
 
 	//////////////////////// BITMAP FONT FILES /////////////////////////////
 	//
 	// Bitmap Fonts are ****VERY*** expensive static memory resources so they are purposely sparse
+	// Removing this had no major effect?
 	BitmapFontFiles
 	{
 		// UI buttons, custom font, (256x64)
@@ -260,20 +252,29 @@ Scheme
 	}
 
 	//////////////////////// FONTS /////////////////////////////
-	//
 	// describes all the fonts
-	// Dont Touch this 
 	Fonts
 	{
 		// fonts are used in order that they are listed
 		// fonts listed later in the order will only be used if they fulfill a range not already filled
 		// if a font fails to load then the subsequent fonts will replace
 		// fonts are used in order that they are listed
+		//Courier New = Arial
+		
+		"JetBrainsMono"
+		{
+			"1"
+			{
+				"name"	"JetBrains Mono NL"
+				"tall"	"18"
+				"antialias" "1"
+			}
+		}
 		"DebugFixed"
 		{
 			"1"
 			{
-				"name"		"Courier New"
+				"name"		"Arial"
 				"tall"		"10"
 				"weight"	"500"
 				"antialias" "1"
@@ -283,7 +284,7 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"Courier New"
+				"name"		"Arial"
 				"tall"		"7"
 				"weight"	"500"
 				"antialias" "1"
@@ -293,42 +294,40 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"Lucida Console" [$WINDOWS]
-				"name"		"Verdana" [!$WINDOWS]
-				"tall"		"14" [$LINUX]
+				"name"		"JetBrains Mono NL"
 				"tall"		 "10"
 				"tall_lodef" "15"
 				"tall_hidef" "20"
 				"weight"	 "0"
 				"outline"	 "1"
+				"antialias" "1"
 			}
 		}
-		"Default"
+		"Default" //THIS IS MOST IF NOT ALL VGUI FONT!!!
 		{
 			"1"
 			{
-				"name"		"Tahoma" [$WINDOWS]
-				"name"		"Verdana" [!$WINDOWS]
-				"tall"		"16"
+				"name"		"Atkinson Hyperlegible"
+				"tall"		"17"
 				"weight"	"500"
+				"antialias" "1"
 			}
 		}
 		"DefaultBold"
 		{
 			"1"
 			{
-				"name"		"Tahoma" [$WINDOWS]
-				"name"		"Verdana" [!$WINDOWS]
-				"tall"		"16"
+				"name"		"Atkinson Hyperlegible"
+				"tall"		"17"
 				"weight"	"1000"
+				"antialias" "1"
 			}
 		}
 		"DefaultUnderline"
 		{
 			"1"
 			{
-				"name"		"Tahoma" [$WINDOWS]
-				"name"		"Verdana" [!$WINDOWS]
+				"name"		"Atkinson Hyperlegible"
 				"tall"		"16"
 				"weight"	"500"
 				"underline" "1"
@@ -338,20 +337,16 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"Tahoma" [$WINDOWS]
-				"name"		"Verdana" [!$WINDOWS]
-				"tall"		"12" [$WINDOWS]
-				"tall"		"14" [$OSX]
-				"tall"		"16" [$LINUX]
-				"weight"	"0"
+				"name"		"Atkinson Hyperlegible"
+				"tall"		"17"
+				"antialias" "1"
 			}
 		}
 		"DefaultSmallDropShadow"
 		{
 			"1"
 			{
-				"name"		"Tahoma" [$WINDOWS]
-				"name"		"Verdana" [!$WINDOWS]
+				"name"		"Atkinson Hyperlegible"
 				"tall"		"13"
 				"weight"	"0"
 				"dropshadow" "1"
@@ -361,104 +356,50 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"Tahoma" [$WINDOWS]
-				"name"		"Verdana" [!$WINDOWS]
+				"name"		"Atkinson Hyperlegible"
 				"tall"		"12"
 				"weight"	"0"
 			}
 		}
-
 		"DefaultLarge"
 		{
 			"1"
 			{
-				"name"		"Tahoma" [$WINDOWS]
-				"name"		"Verdana" [!$WINDOWS]
+				"name"		"Atkinson Hyperlegible"
 				"tall"		"18"
 				"weight"	"0"
 			}
 		}
 		"UiBold"
 		{
-			"1"	[$WIN32]
+			"1"
 			{
-				"name"		"Tahoma" [$WINDOWS]
-				"name"		"Verdana" [!$WINDOWS]
+				"name"		"Atkinson Hyperlegible" 
 				"tall"		"12"
 				"weight"	"1000"
 			}
 		}
 		"MenuLarge"
 		{
-			"1"	[$LINUX]
+			"1"
 			{
-				"name"		"Helvetica Bold"
-				"tall"		"20"
-				"antialias" "1"
-			}
-			"1"	[!$LINUX]
-			{
-				"name"		"Verdana"
+				"name"		"Atkinson Hyperlegible"
 				"tall"		"16"
 				"weight"	"600"
 				"antialias" "1"
 			}
 		}
-		"AchievementTitleFont"
+		"ConsoleText" //THIS IS THE CONSOLE FONT!!!
 		{
 			"1"
 			{
-				"name"		"Verdana"
-				"tall"		"20"
-				"weight"	"1200"
-				"antialias" "1"
-				"outline" "1"
-			}
-		}
-		"AchievementTitleFontSmaller"
-		{
-			"1"
-			{
-				"name"		"Verdana"
-				"tall"		"18"
-				"weight"	"1200"
-				"antialias" "1"
-				//"outline" "1"
-			}
-		}
-		"AchievementDescriptionFont"
-		{
-			"1"
-			{
-				"name"		"Verdana"
-				"tall"		"15"
-				"weight"	"1200"
-				"antialias" "1"
-				"outline" "1"
-				"yres"		"0 480"
-			}
-			"2"
-			{
-				"name"		"Verdana"
-				"tall"		"20"
-				"weight"	"1200"
-				"antialias" "1"
-				"outline" "1"
-				"yres"	 "481 10000"
-			}
-		}
-		"ConsoleText"
-		{
-			"1"
-			{
-				"name"		"Lucida Console" [$WINDOWS]
-				"name"		"Verdana" [!$WINDOWS]
-				"tall"		"10" [$WINDOWS]
-				"tall"		"14" [!$WINDOWS]
+				"name"		"JetBrains Mono NL"
+				"tall"		"16" 
 				"weight"	"500"
+				"antialias" "1"
 			}
 		}
-		"Trebuchet24"
+		"Trebuchet24" //Unchanged
 		{
 			"1"
 			{
@@ -467,7 +408,7 @@ Scheme
 				"weight"	"900"
 			}
 		}
-		"Trebuchet20"
+		"Trebuchet20" //Unchanged
 		{
 			"1"
 			{
@@ -476,7 +417,7 @@ Scheme
 				"weight"	"900"
 			}
 		}
-		"Trebuchet18"
+		"Trebuchet18" //Unchanged
 		{
 			"1"
 			{
@@ -485,7 +426,7 @@ Scheme
 				"weight"	"900"
 			}
 		}
-		"Marlett" // this is the symbol font
+		"Marlett" // Symbol Font, Dont know where this would / is used
 		{
 			"1"
 			{
@@ -495,70 +436,11 @@ Scheme
 				"symbol"	"1"
 			}
 		}
-
-		// HUD numbers
-		// We use multiple fonts to 'pulse' them in the HUD, hence the need for many of near size
-		"HUDNumber"
-		{
-			"1"
-			{
-				"name"		"Trebuchet MS"
-				"tall"		"40"
-				"weight"	"900"
-			}
-		}
-		"HUDNumber1"
-		{
-			"1"
-			{
-				"name"		"Trebuchet MS"
-				"tall"		"41"
-				"weight"	"900"
-			}
-		}
-		"HUDNumber2"
-		{
-			"1"
-			{
-				"name"		"Trebuchet MS"
-				"tall"		"42"
-				"weight"	"900"
-			}
-		}
-		"HUDNumber3"
-		{
-			"1"
-			{
-				"name"		"Trebuchet MS"
-				"tall"		"43"
-				"weight"	"900"
-			}
-		}
-		"HUDNumber4"
-		{
-			"1"
-			{
-				"name"		"Trebuchet MS"
-				"tall"		"44"
-				"weight"	"900"
-			}
-		}
-		"HUDNumber5"
-		{
-			"1"
-			{
-				"name"		"Trebuchet MS"
-				"tall"		"45"
-				"weight"	"900"
-			}
-		}
 		"DefaultFixed"
 		{
 			"1"
 			{
-				"name"		 "Lucida Console" [$WINDOWS]
-				"name"		 "Verdana" [$LINUX]
-				"tall"		"11" [$LINUX]
+				"name"		 "JetBrains Mono NL"
 				"tall"		"10"
 				"weight"	"0"
 			}
@@ -568,225 +450,19 @@ Scheme
 		{
 			"1"
 			{
-				"name"		 "Lucida Console" [$WINDOWS]
-				"name"		 "Lucida Console" [$OSX]
-				"name"		 "Courier" [$LINUX]
-				"tall"		"14" [$LINUX]
+				"name"		 "JetBrains Mono NL"
 				"tall"		"10"
 				"weight"	"0"
 				"dropshadow" "1"
 			}
 		}
-		"CloseCaption_Normal"
-		{
-			"1"
-			{
-				"name"		"Tahoma" [!$POSIX]
-				"name"		"Verdana" [$POSIX]
-				"tall"		"16"
-				"weight"	"500"
-			}
-		}
-		"CloseCaption_Italic"
-		{
-			"1"
-			{
-				"name"		"Tahoma"
-				"tall"		"16"
-				"weight"	"500"
-				"italic"	"1"
-			}
-		}
-		"CloseCaption_Bold"
-		{
-			"1"
-			{
-				"name"		"Tahoma" [!$POSIX]
-				"name"		"Verdana Bold" [$POSIX]
-				"tall"		"16"
-				"weight"	"900"
-			}
-		}
-		"CloseCaption_BoldItalic"
-		{
-			"1"
-			{
-				"name"		"Tahoma" [!$POSIX]
-				"name"		"Verdana Bold Italic" [$POSIX]
-				"tall"		"16"
-				"weight"	"900"
-				"italic"	"1"
-			}
-		}
-		TitleFont
-		{
-			"1"
-			{
-				"name"		"HalfLife2"
-				"tall"		"72"
-				"weight"	"400"
-				"antialias"	"1"
-				"custom"	"1"
-			}
-		}
-		TitleFont2
-		{
-			"1"
-			{
-				"name"		"HalfLife2"
-				"tall"		"120"
-				"weight"	"400"
-				"antialias"	"1"
-				"custom"	"1"
-			}
-		}
-		StatsTitle	[$WIN32]
-		{
-			"1"
-			{
-				"name"		"Arial" [!$POSIX]
-				"name"		"Verdana Bold" [$POSIX]
-				"weight"		"2000"
-				"tall"			"20"
-				"antialias"		"1"
-			}
-		}
-		StatsText	[$WIN32]
-		{
-			"1"
-			{
-				"name"		"Arial" [!$POSIX]
-				"name"		"Verdana Bold" [$POSIX]
-				"weight"		"2000"
-				"tall"			"18"
-				"antialias"		"1"
-			}
-		}
-		AchievementItemTitle	[$WIN32]
-		{
-			"1"
-			{
-				"name"		"Arial" [!$POSIX]
-				"name"		"Verdana Bold" [$POSIX]
-				"weight"		"1500"
-				"tall"			"16" [!$POSIX]
-				"tall"			"18" [$POSIX]
-				"antialias"		"1"
-			}
-		}
-		AchievementItemDate	[$WIN32]
-		{
-			"1"
-			{
-				"name"		"Arial" [!$POSIX]
-				"name"		"Verdana Bold" [$POSIX]
-				"weight"		"1500"
-				"tall"			"16"
-				"antialias"		"1"
-			}
-		}
-		StatsPageText
-		{
-			"1"
-			{
-				"name"		"Arial" [!$POSIX]
-				"name"		"Verdana Bold" [$POSIX]
-				"weight"		"1500"
-				"tall"			"14" [!$POSIX]
-				"tall"			"16" [$POSIX]
-				"antialias"		"1"
-			}
-		}
-		AchievementItemTitleLarge	[$WIN32]
-		{
-			"1"
-			{
-				"name"		"Arial" [!$POSIX]
-				"name"		"Verdana Bold" [$POSIX]
-				"weight"		"1500"
-				"tall"			"18" [!$POSIX]
-				"tall"			"19" [$POSIX]
-				"antialias"		"1"
-			}
-		}
 
-		AchievementItemDescription	[$WIN32]
-		{
-			"1"
-			{
-				"name"		"Arial" [!$POSIX]
-				"name"		"Verdana" [$POSIX]
-				"weight"		"1000"
-				"tall"			"14" [!$POSIX]
-				"tall"			"15" [$POSIX]
-				"antialias"		"1"
-			}
-		}
-		"ServerBrowserTitle"
-		{
-			"1"
-			{
-				"name"		"Tahoma" [!$POSIX]
-				"name"		"Verdana" [$POSIX]
-				"tall"		"35"
-				"tall_lodef"	"40"
-				"weight"	"500"
-				"additive"	"0"
-				"antialias" "1"
-			}
-		}
-		"ServerBrowserSmall"
-		{
-			"1"
-			{
-				"name"		"Tahoma"
-				"tall"		"16"
-				"weight"	"0"
-				"range"		"0x0000 0x017F" //	Basic Latin, Latin-1 Supplement, Latin Extended-A
-				"yres"	"480 599"
-			}
-			"2"
-			{
-				"name"		"Tahoma"
-				"tall"		"16"
-				"weight"	"0"
-				"range"		"0x0000 0x017F" //	Basic Latin, Latin-1 Supplement, Latin Extended-A
-				"yres"	"600 767"
-			}
-			"3"
-			{
-				"name"		"Tahoma"
-				"tall"		"16"
-				"weight"	"0"
-				"range"		"0x0000 0x017F" //	Basic Latin, Latin-1 Supplement, Latin Extended-A
-				"yres"	"768 1023"
-				"antialias"	"1"
-			}
-			"4"
-			{
-				"name"		"Tahoma"
-				"tall"		"19"
-				"weight"	"0"
-				"range"		"0x0000 0x017F" //	Basic Latin, Latin-1 Supplement, Latin Extended-A
-				"yres"	"1024 1199"
-				"antialias"	"1"
-			}
-			"5"
-			{
-				"name"		"Tahoma"
-				"tall"		"19"
-				"weight"	"0"
-				"range"		"0x0000 0x017F" //	Basic Latin, Latin-1 Supplement, Latin Extended-A
-				"yres"	"1200 6000"
-				"antialias"	"1"
-			}
-		}
 	}
 
 	//
 	//////////////////// BORDERS //////////////////////////////
-	//
 	// describes all the border types
+	// This remains mostly unchanged
 	Borders
 	{
 		BaseBorder		SubtleBorder
@@ -798,7 +474,7 @@ Scheme
 
 		FrameBorder
 		{
-			// rounded corners for frames
+			//Make Corners Rounded
 			//"backgroundtype" "2"
 
 			Left
@@ -837,7 +513,6 @@ Scheme
 				}
 			}
 		}
-
 		SubtleBorder
 		{
 			"inset" "0 0 0 0"
@@ -877,7 +552,6 @@ Scheme
 				}
 			}
 		}
-
 		DepressedBorder
 		{
 			"inset" "0 0 0 0"
@@ -956,22 +630,18 @@ Scheme
 				}
 			}
 		}
-
 		TitleButtonBorder
 		{
 			"backgroundtype" "0"
 		}
-
 		TitleButtonDisabledBorder
 		{
 			"backgroundtype" "0"
 		}
-
 		TitleButtonDepressedBorder
 		{
 			"backgroundtype" "0"
 		}
-
 		ScrollBarButtonBorder
 		{
 			"inset" "0 0 0 0"
@@ -1011,7 +681,6 @@ Scheme
 				}
 			}
 		}
-
 		ScrollBarButtonDepressedBorder
 		{
 			"inset" "0 0 0 0"
@@ -1051,7 +720,6 @@ Scheme
 				}
 			}
 		}
-
 		TabBorder
 		{
 			"inset" "1 1 1 1"
@@ -1067,7 +735,6 @@ Scheme
 			}
 
 		}
-
 		TabActiveBorder
 		{
 			"inset" "1 1 1 1"
@@ -1099,8 +766,6 @@ Scheme
 			}
 
 		}
-
-
 		ToolTipBorder
 		{
 			"inset" "0 0 1 0"
@@ -1140,7 +805,6 @@ Scheme
 				}
 			}
 		}
-
 		// this is the border used for default buttons (the button that gets pressed when you hit enter)
 		ButtonKeyFocusBorder
 		{
@@ -1178,7 +842,6 @@ Scheme
 				}
 			}
 		}
-
 		ButtonDepressedBorder
 		{
 			"inset" "0 0 0 0"
@@ -1225,8 +888,6 @@ Scheme
 	// specifies all the custom (non-system) font files that need to be loaded to service the above described fonts
 	CustomFontFiles
 	{
-		"1"		"resource/HALFLIFE2.ttf"
-		"2"		"resource/HL2EP2.ttf"
-		"3"		"resource/marlett.ttf"
+		"1"		"resource/marlett.ttf"
 	}
 }
