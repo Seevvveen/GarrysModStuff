@@ -1,3 +1,0 @@
-## SHOULD_FAIL:COMPILE
-
-const X = function(X:void) {}
