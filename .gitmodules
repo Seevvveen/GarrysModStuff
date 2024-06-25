@@ -1,3 +1,6 @@
 [submodule "garrysmod/addons/wiremod"]
 	path = garrysmod/addons/wiremod
 	url = https://github.com/wiremod/wire
+[submodule "garrysmod/addons/pac3"]
+	path = garrysmod/addons/pac3
+	url = https://github.com/CapsAdmin/pac3
