@@ -1,0 +1,3 @@
+[submodule "Wiremod"]
+	path = garrysmod/addons/Wiremod
+	url = https://github.com/wiremod/wire
