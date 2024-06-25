@@ -1,3 +1,3 @@
-[submodule "Wiremod"]
-	path = addons/Wiremod
+[submodule "garrysmod/addons/Wiremod"]
+	path = garrysmod/addons/Wiremod
 	url = https://github.com/wiremod/wire
