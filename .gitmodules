@@ -4,3 +4,18 @@
 [submodule "garrysmod/addons/pac3"]
 	path = garrysmod/addons/pac3
 	url = https://github.com/CapsAdmin/pac3
+[submodule "garrysmod/addons/advdupe2"]
+	path = garrysmod/addons/advdupe2
+	url = https://github.com/wiremod/advdupe2
+[submodule "garrysmod/addons/StarfallEx"]
+	path = garrysmod/addons/StarfallEx
+	url = https://github.com/thegrb93/StarfallEx
+[submodule "garrysmod/addons/ulx"]
+	path = garrysmod/addons/ulx
+	url = https://github.com/TeamUlysses/ulx
+[submodule "garrysmod/addons/ulib"]
+	path = garrysmod/addons/ulib
+	url = https://github.com/TeamUlysses/ulib
+[submodule "garrysmod/addons/ACF"]
+	path = garrysmod/addons/ACF
+	url = https://github.com/nrlulz/ACF
